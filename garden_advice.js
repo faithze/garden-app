@@ -1,39 +1,66 @@
 /**
- * Returns gardening advice based on the season.
- * @param {string} season
- * @returns {string}
+ * Determines and returns gardening advice based on the season provided.
+ * This function isolates seasonal logic to improve readability and reusability.
+ *
+ * @param {string} season - The current season (e.g. "summer" or "winter")
+ * @returns {string} - Advice related to seasonal plant care
  */
 function getSeasonAdvice(season) {
+    // Check if the season is summer
     if (season === "summer") {
         return "Water your plants regularly and provide some shade.\n";
-    } else if (season === "winter") {
+    }
+    // Check if the season is winter
+    else if (season === "winter") {
         return "Protect your plants from frost with covers.\n";
-    } else {
+    }
+    // Fallback advice if the season is unrecognised
+    else {
         return "No advice for this season.\n";
     }
 }
 
 /**
- * Returns gardening advice based on the plant type.
- * @param {string} plantType
- * @returns {string}
+ * Determines and returns gardening advice based on the type of plant.
+ * This function keeps plant-specific logic separate from seasonal logic.
+ *
+ * @param {string} plantType - The type of plant (e.g. "flower" or "vegetable")
+ * @returns {string} - Advice related to plant-specific care
  */
 function getPlantAdvice(plantType) {
+    // Advice for flowering plants
     if (plantType === "flower") {
         return "Use fertiliser to encourage blooms.";
-    } else if (plantType === "vegetable") {
+    }
+    // Advice for vegetable plants
+    else if (plantType === "vegetable") {
         return "Keep an eye out for pests!";
-    } else {
+    }
+    // Fallback advice if the plant type is unrecognised
+    else {
         return "No advice for this type of plant.";
     }
 }
 
-// Hardcoded values remain for Issue 1
-let season = "summer";
-let plantType = "flower";
+/**
+ * Prompt the user to input the current season.
+ * The input is converted to lowercase to ensure consistent comparisons.
+ */
+let season = prompt("Enter the season (summer/winter):").toLowerCase();
 
-// Combine advice
+/**
+ * Prompt the user to input the plant type.
+ * The input is converted to lowercase to avoid case-sensitivity issues.
+ */
+let plantType = prompt("Enter plant type (flower/vegetable):").toLowerCase();
+
+/**
+ * Combine the advice returned from both functions into a single message.
+ * This keeps output logic separate from decision-making logic.
+ */
 let advice = getSeasonAdvice(season) + getPlantAdvice(plantType);
 
-// Output advice
+/**
+ * Output the final gardening advice to the browser console.
+ */
 console.log(advice);
