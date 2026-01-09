@@ -44,6 +44,8 @@ function getPlantAdvice(plantType) {
     }
 }
 
+// User input replaces previously hardcoded season and plant type values (Issue #4)
+
 /**
  * Prompt the user to input the current season.
  * The input is converted to lowercase to ensure consistent comparisons.
