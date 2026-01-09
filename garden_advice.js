@@ -1,3 +1,5 @@
+// Refactored gardening logic into reusable functions (Issue #3)
+
 /**
  * Determines and returns gardening advice based on the season provided.
  * This function isolates seasonal logic to improve readability and reusability.
