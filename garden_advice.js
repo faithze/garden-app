@@ -22,9 +22,9 @@ function getPlantAdvice(plantType) {
     return "No advice for this type of plant.";
 }
 
-// Hardcoded values remain for this issue
-let season = "summer";
-let plantType = "flower";
+// Get user input instead of hardcoded values
+let season = prompt("Enter the season (summer/winter):").toLowerCase();
+let plantType = prompt("Enter plant type (flower/vegetable):").toLowerCase();
 
 // Combine advice from both functions
 let advice = getSeasonAdvice(season) + getPlantAdvice(plantType);
